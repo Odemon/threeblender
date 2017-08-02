@@ -21,19 +21,14 @@
 			camera.position.set( -15, 10, 10 );
 			camera.lookAt( scene.position );
 			
-			//var geometry = new THREE.BoxGeometry( 5, 5, 5 );
-			//var material = new THREE.MeshLambertMaterial( { color: 0xFF0000 } );
-			var mesh = new THREE.Mesh( geometry, material );
-			scene.add( mesh );
+
              // Models
             var model;
             
-            // Load the JSON files and provide callback functions (modelToScene
             var loader = new THREE.JSONLoader();
             loader.load( "./models/bballvari.json", handleModel);
 
 
-            // After loading JSON from our file, we add it to the scene
             function handleModel( geometry, materials ) {
                 var material = new THREE.MeshFaceMaterial(materials);
                 model = new THREE.Mesh( geometry, material );
