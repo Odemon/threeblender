@@ -27,19 +27,18 @@
 			scene.add( mesh );
              // Models
             var model;
-            var sphereModel;
             
             // Load the JSON files and provide callback functions (modelToScene
             var loader = new THREE.JSONLoader();
-            loader.load( "./models/bballvari.json", addModelToScene );
+            loader.load( "./models/bballvari.json", handleModel);
 
 
             // After loading JSON from our file, we add it to the scene
-            function addModelToScene( geometry, materials ) {
-            var material = new THREE.MeshFaceMaterial(materials);
-            model = new THREE.Mesh( geometry, material );
-            model.scale.set(0.5,0.5,0.5);
-            scene.add( model );
+            function handleModel( geometry, materials ) {
+                var material = new THREE.MeshFaceMaterial(materials);
+                model = new THREE.Mesh( geometry, material );
+                model.scale.set(0.5,0.5,0.5);
+                scene.add( model );
             }
             
             
